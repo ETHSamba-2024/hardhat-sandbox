@@ -1,5 +1,4 @@
 // SPDX-License-Identifier: MIT
-
 pragma solidity ^0.8.20;
 
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
@@ -48,19 +47,4 @@ contract ERC20 is Ownable {
       revert("Must hold above 50% governance power to claim ownership");
     _transferOwnership(msg.sender);
   }
-
-  // function packData(
-  //     address addr,
-  //     uint256 value
-  // ) public pure returns (uint256) {
-  //     return (uint256(uint160(addr)) << 96) | uint256(value);
-  // }
-
-  //   function parseData(uint256 config) public pure returns (address, uint96) {
-  //     return (address(uint160(config >> 96)), uint96(config & ((1 << 96) - 1)));
-  //   }
-
-  //   function parseData2(uint256 config) public pure returns (address, uint96) {
-  //     return (address(uint160(config >> 96)), uint96(config));
-  //   }
 }
