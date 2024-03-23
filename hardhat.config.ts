@@ -19,7 +19,7 @@ const config: HardhatUserConfig = {
     },
     sepolia: {
       url: `${process.env.ALCHEMY_RPC_SEPOLIA}`,
-      accounts: [`${process.env.DEPLOYER_PRIVATE_KEY}`],
+      accounts: [`${process.env.DEPLOYER_PRIVATE_KEY, process.env.EXPLOITER_PRIVATE_KEY}`],
     },
   },
   defaultNetwork: "hardhat",
