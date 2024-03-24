@@ -22,16 +22,16 @@ yarn
 ### Deploy the contract
 
 ```bash
-npx hardhat run scripts/deploy.js --network sepolia
+npx hardhat run scripts/deploy.ts --network sepolia
 ```
 
 ### Deploy the attack contract and solve the puzzle
 
 ```bash
-npx hardhat run scripts/attack.js --network sepolia
+npx hardhat run scripts/attack.ts --network sepolia
 ```
 
-### You can also verify the contracts
+### You can also verify the contract
 
 ```bash
 npx hardhat verify --network sepolia DEPLOYED_CONTRACT_ADDRESS
