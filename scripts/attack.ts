@@ -27,6 +27,8 @@ async function main() {
   const currentCommander = await HigherOrder.commander();
   console.log("Current Commander:", currentCommander);
 
+  console.log("Attacking...");
+
   // Attack the target contract
   let tx = await HigherOrderAttack.attack(target);
   await tx.wait();
