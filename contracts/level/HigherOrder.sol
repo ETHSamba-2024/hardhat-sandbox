@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.7.6;
+pragma solidity 0.6.12;
 
 contract HigherOrder {
   address public commander;
@@ -8,7 +8,7 @@ contract HigherOrder {
 
   function registerTreasury(uint8) public {
     assembly {
-      sstore(treasury.slot, calldataload(4))
+      sstore(treasury_slot, calldataload(4))
     }
   }
 

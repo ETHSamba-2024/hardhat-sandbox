@@ -7,20 +7,11 @@ const config: HardhatUserConfig = {
   solidity: {
     compilers: [
       {
-        version: "0.8.20",
+        version: "0.6.12",
         settings: {
           optimizer: {
             enabled: true,
-            runs: 200,
-          },
-        },
-      },
-      {
-        version: "0.7.6",
-        settings: {
-          optimizer: {
-            enabled: true,
-            runs: 200,
+            runs: 1000,
           },
         },
       },
@@ -32,14 +23,13 @@ const config: HardhatUserConfig = {
     },
     sepolia: {
       url: `${process.env.ALCHEMY_RPC_SEPOLIA}`,
-      accounts: [
-        `${
-          (process.env.DEPLOYER_PRIVATE_KEY, process.env.EXPLOITER_PRIVATE_KEY)
-        }`,
-      ],
+      accounts: [`${process.env.ATTACKER_PRIVATE_KEY}`],
     },
   },
   defaultNetwork: "hardhat",
+  etherscan: {
+    apiKey: `${process.env.ETHERSCAN_API_KEY}`,
+  },
   gasReporter: {
     enabled: true,
   },
